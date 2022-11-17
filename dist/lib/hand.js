@@ -57,7 +57,6 @@ var Hand = /** @class */ (function () {
         return Hand.of(cards);
     };
     Hand.of = function (cards) {
-        assert_1.default(cards.length === 7);
         var hand1 = Hand._highLowHandEval(cards);
         var hand2 = Hand._straightFlushEval(cards);
         if (hand2 !== null) {

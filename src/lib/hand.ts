@@ -45,7 +45,6 @@ export default class Hand {
     }
 
     static of(cards: Card[]): Hand {
-        assert(cards.length === 7)
         const hand1 = Hand._highLowHandEval(cards)
         const hand2 = Hand._straightFlushEval(cards)
 
