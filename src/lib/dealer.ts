@@ -62,7 +62,6 @@ export default class Dealer {
         this._holeCards = new Array(numSeats).fill(null)
         this._winners = []
 
-        assert(deck.length === 52, 'Deck must be whole')
         assert(communityCards.cards().length === 0, 'No community cards should have been dealt')
     }
 

@@ -74,7 +74,6 @@ var Dealer = /** @class */ (function () {
         this._potManager = new pot_manager_1.default();
         this._holeCards = new Array(numSeats).fill(null);
         this._winners = [];
-        assert_1.default(deck.length === 52, 'Deck must be whole');
         assert_1.default(communityCards.cards().length === 0, 'No community cards should have been dealt');
     }
     Dealer.isValid = function (action) {
