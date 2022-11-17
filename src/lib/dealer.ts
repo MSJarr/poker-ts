@@ -342,7 +342,7 @@ export default class Dealer {
     private dealHoleCards(): void {
         this._players.forEach((player, index) => {
             if (player !== null) {
-                this._holeCards[index] = [this._deck.draw(), this._deck.draw()]
+                this._holeCards[index] = [this._deck.draw(), this._deck.draw(), this._deck.draw(), this._deck.draw(), this._deck.draw()]
             }
         })
     }

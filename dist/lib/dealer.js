@@ -338,7 +338,7 @@ var Dealer = /** @class */ (function () {
         var _this = this;
         this._players.forEach(function (player, index) {
             if (player !== null) {
-                _this._holeCards[index] = [_this._deck.draw(), _this._deck.draw()];
+                _this._holeCards[index] = [_this._deck.draw(), _this._deck.draw(), _this._deck.draw(), _this._deck.draw(), _this._deck.draw()];
             }
         });
     };
