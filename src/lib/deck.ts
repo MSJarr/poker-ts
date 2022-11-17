@@ -21,12 +21,12 @@ export default class Deck extends Array<Card> {
         }
 
         this.shuffle = shuffleAlgorithm.bind(null, this)
-        this._size = 52
+        this._size = 55
         this.shuffle()
     }
 
     fillAndShuffle(): void {
-        this._size = 52;
+        this._size = 55;
         this.shuffle()
     }
 

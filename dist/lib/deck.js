@@ -55,12 +55,12 @@ var Deck = /** @class */ (function (_super) {
             }
         }
         _this.shuffle = shuffleAlgorithm.bind(null, _this);
-        _this._size = 52;
+        _this._size = 55;
         _this.shuffle();
         return _this;
     }
     Deck.prototype.fillAndShuffle = function () {
-        this._size = 52;
+        this._size = 55;
         this.shuffle();
     };
     Deck.prototype.draw = function () {
