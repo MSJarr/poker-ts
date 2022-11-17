@@ -352,7 +352,11 @@ export default class Dealer {
         const cards: Card[] = []
         const numCardsToDeal = this._roundOfBetting - this._communityCards.cards().length
         for (let index = 0; index < numCardsToDeal; index++) {
-            cards.push(this._deck.draw())
+            let drewCard = this._deck.draw()
+            while (drewCard.rank > 12) {
+                drewCard = this._deck.draw()
+            }
+            cards.push(drewCard)
         }
         this._communityCards.deal(cards)
     }

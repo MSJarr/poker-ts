@@ -347,7 +347,11 @@ var Dealer = /** @class */ (function () {
         var cards = [];
         var numCardsToDeal = this._roundOfBetting - this._communityCards.cards().length;
         for (var index = 0; index < numCardsToDeal; index++) {
-            cards.push(this._deck.draw());
+            var drewCard = this._deck.draw();
+            while (drewCard.rank > 12) {
+                drewCard = this._deck.draw();
+            }
+            cards.push(drewCard);
         }
         this._communityCards.deal(cards);
     };
