@@ -11,7 +11,8 @@ export declare enum HandRanking {
     FULL_HOUSE = 6,
     FOUR_OF_A_KIND = 7,
     STRAIGHT_FLUSH = 8,
-    ROYAL_FLUSH = 9
+    ROYAL_FLUSH = 9,
+    RULES = 10
 }
 export declare type RankInfo = {
     rank: CardRank;

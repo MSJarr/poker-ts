@@ -15,6 +15,7 @@ export enum HandRanking {
     FOUR_OF_A_KIND,
     STRAIGHT_FLUSH,
     ROYAL_FLUSH,
+    RULES
 }
 
 export type RankInfo = {
@@ -195,6 +196,9 @@ export default class Hand {
         assert(cards.length === 7)
 
         cards = [...cards]
+        if (cards.filter((c) => { return c.rank > 13}).length == 1) {
+            return new Hand(HandRanking.RULES, 0, cards.slice(0,5))
+        }
         const suitedCards = Hand.getSuitedCards(cards)
         if (suitedCards !== null) {
             const straightCards = this.getStraightCards(suitedCards)

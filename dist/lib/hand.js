@@ -43,6 +43,7 @@ var HandRanking;
     HandRanking[HandRanking["FOUR_OF_A_KIND"] = 7] = "FOUR_OF_A_KIND";
     HandRanking[HandRanking["STRAIGHT_FLUSH"] = 8] = "STRAIGHT_FLUSH";
     HandRanking[HandRanking["ROYAL_FLUSH"] = 9] = "ROYAL_FLUSH";
+    HandRanking[HandRanking["RULES"] = 10] = "RULES";
 })(HandRanking = exports.HandRanking || (exports.HandRanking = {}));
 var Hand = /** @class */ (function () {
     function Hand(ranking, strength, cards) {
@@ -197,6 +198,9 @@ var Hand = /** @class */ (function () {
     Hand._straightFlushEval = function (cards) {
         assert_1.default(cards.length === 7);
         cards = __spreadArray([], cards);
+        if (cards.filter(function (c) { return c.rank > 13; }).length == 1) {
+            return new Hand(HandRanking.RULES, 0, cards.slice(0, 5));
+        }
         var suitedCards = Hand.getSuitedCards(cards);
         if (suitedCards !== null) {
             var straightCards = this.getStraightCards(suitedCards);
