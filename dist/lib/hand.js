@@ -101,7 +101,6 @@ var Hand = /** @class */ (function () {
     // If there are >=5 cards with the same suit, return a span containing all of
     // them.
     Hand.getSuitedCards = function (cards) {
-        assert_1.default(cards.length === 7);
         cards.sort(card_1.default.compare);
         var first = 0;
         for (;;) {
@@ -151,7 +150,6 @@ var Hand = /** @class */ (function () {
         }
     };
     Hand._highLowHandEval = function (cards /* size = 7 */) {
-        assert_1.default(cards.length === 7);
         cards = __spreadArray([], cards);
         var rankOccurrences = new Array(13).fill(0);
         for (var _i = 0, cards_1 = cards; _i < cards_1.length; _i++) {
@@ -196,7 +194,6 @@ var Hand = /** @class */ (function () {
         return new Hand(ranking, strength, handCards);
     };
     Hand._straightFlushEval = function (cards) {
-        assert_1.default(cards.length === 7);
         cards = __spreadArray([], cards);
         if (cards.filter(function (c) { return c.rank > 13; }).length == 1) {
             return new Hand(HandRanking.RULES, 0, cards.slice(0, 5));

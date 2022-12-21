@@ -95,7 +95,6 @@ export default class Hand {
     // If there are >=5 cards with the same suit, return a span containing all of
     // them.
     static getSuitedCards(cards: Card[]): Card[] | null {
-        assert(cards.length === 7)
         cards.sort(Card.compare)
         let first = 0
         for (; ;) {
@@ -145,7 +144,6 @@ export default class Hand {
     }
 
     static _highLowHandEval(cards: Card[] /* size = 7 */): Hand {
-        assert(cards.length === 7)
 
         cards = [...cards]
 
@@ -193,7 +191,6 @@ export default class Hand {
     }
 
     static _straightFlushEval(cards: Card[]): Hand | null {
-        assert(cards.length === 7)
 
         cards = [...cards]
         if (cards.filter((c) => { return c.rank > 13}).length == 1) {
