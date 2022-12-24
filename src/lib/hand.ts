@@ -197,7 +197,7 @@ export default class Hand {
     static _straightFlushEval(cards: Card[]): Hand | null {
 
         cards = [...cards]
-        if (cards.filter((c) => { return c.rank > 13}).length == 1) {
+        if (cards.filter((c, i) => { return i != 0 && c.rank == CardRank.R}).length == 1) {
             return new Hand(HandRanking.RULES, 0, cards.slice(0,5))
         }
         const suitedCards = Hand.getSuitedCards(cards)

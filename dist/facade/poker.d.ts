@@ -2,7 +2,7 @@ import ChipRange from '../lib/chip-range';
 import { SeatIndex } from 'types/seat-index';
 import { HandRanking } from '../lib/hand';
 declare type Card = {
-    rank: '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'T' | 'J' | 'Q' | 'K' | 'A';
+    rank: '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'T' | 'J' | 'Q' | 'K' | 'A' | 'O' | 'R' | 'E';
     suit: 'clubs' | 'diamonds' | 'hearts' | 'spades';
 };
 declare type AutomaticAction = 'fold' | 'check/fold' | 'check' | 'call' | 'call any' | 'all-in';
