@@ -37,6 +37,10 @@ export default class Hand {
     }
 
     static create(holeCards: HoleCards, communityCards: CommunityCards): Hand {
+        // Remove rules if it's the first card
+        holeCards = holeCards.filter((c,i) => {return (i == 0 && c.rank != CardRank.R) || i != 0})
+        // Remove discarded (empty) cards
+        holeCards = holeCards.filter((e) => {return e.rank != CardRank.E})
         assert(communityCards.cards().length === 5, 'All community cards must be dealt')
         const cards = [
             ...holeCards,

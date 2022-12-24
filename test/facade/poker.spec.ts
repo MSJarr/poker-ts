@@ -193,7 +193,7 @@ describe('Poker facade', () => {
                     if (cards !== null) {
                         for (const card of cards) {
                             expect(card.suit).toMatch(/clubs|diamonds|hearts|spades/)
-                            expect(card.rank).toMatch(/2|3|4|5|6|7|8|9|T|J|Q|K|A/)
+                            expect(card.rank).toMatch(/2|3|4|5|6|7|8|9|T|J|Q|K|A|O|R/)
                         }
                     }
                 }

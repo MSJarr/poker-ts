@@ -19,6 +19,9 @@ export default class Deck extends Array<Card> {
                 this[index++] = new Card(rank, suit)
             }
         }
+        this[index++] = new Card(CardRank.O, CardSuit.CLUBS)
+        this[index++] = new Card(CardRank.O, CardSuit.DIAMONDS)
+        this[index++] = new Card(CardRank.R, CardSuit.CLUBS)
 
         this.shuffle = shuffleAlgorithm.bind(null, this)
         this._size = 55

@@ -16,6 +16,9 @@ var CardRank;
     CardRank[CardRank["Q"] = 10] = "Q";
     CardRank[CardRank["K"] = 11] = "K";
     CardRank[CardRank["A"] = 12] = "A";
+    CardRank[CardRank["O"] = 13] = "O";
+    CardRank[CardRank["R"] = 14] = "R";
+    CardRank[CardRank["E"] = 15] = "E";
 })(CardRank = exports.CardRank || (exports.CardRank = {}));
 var CardSuit;
 (function (CardSuit) {

@@ -54,6 +54,9 @@ var Deck = /** @class */ (function (_super) {
                 _this[index++] = new card_1.default(rank, suit);
             }
         }
+        _this[index++] = new card_1.default(card_1.CardRank.O, card_1.CardSuit.CLUBS);
+        _this[index++] = new card_1.default(card_1.CardRank.O, card_1.CardSuit.DIAMONDS);
+        _this[index++] = new card_1.default(card_1.CardRank.R, card_1.CardSuit.CLUBS);
         _this.shuffle = shuffleAlgorithm.bind(null, _this);
         _this._size = 55;
         _this.shuffle();

@@ -53,6 +53,10 @@ var Hand = /** @class */ (function () {
         this._strength = strength;
     }
     Hand.create = function (holeCards, communityCards) {
+        // Remove rules if it's the first card
+        holeCards = holeCards.filter(function (c, i) { return (i == 0 && c.rank != card_1.CardRank.R) || i != 0; });
+        // Remove discarded (empty) cards
+        holeCards = holeCards.filter(function (e) { return e.rank != card_1.CardRank.E; });
         assert_1.default(communityCards.cards().length === 5, 'All community cards must be dealt');
         var cards = __spreadArray(__spreadArray([], holeCards), communityCards.cards());
         return Hand.of(cards);

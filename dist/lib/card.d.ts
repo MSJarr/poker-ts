@@ -11,7 +11,10 @@ export declare enum CardRank {
     J = 9,
     Q = 10,
     K = 11,
-    A = 12
+    A = 12,
+    O = 13,
+    R = 14,
+    E = 15
 }
 export declare enum CardSuit {
     CLUBS = 0,

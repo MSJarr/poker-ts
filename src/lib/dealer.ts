@@ -62,6 +62,7 @@ export default class Dealer {
         this._holeCards = new Array(numSeats).fill(null)
         this._winners = []
 
+        assert(deck.length === 55, 'Deck must be whole')
         assert(communityCards.cards().length === 0, 'No community cards should have been dealt')
     }
 
@@ -258,9 +259,7 @@ export default class Dealer {
             const playerResults: [SeatIndex, Hand][] = pot.eligiblePlayers().map(seatIndex => {
                 return [seatIndex, Hand.create(this._holeCards[seatIndex], this._communityCards)]
             })
-
             playerResults.sort(([, first], [, second]) => Hand.compare(first, second))
-
             const lastWinnerIndex = findIndexAdjacent(playerResults, ([, first], [, second]) => {
                 return Hand.compare(first, second) !== 0
             })

@@ -1,4 +1,4 @@
-export enum CardRank {_2, _3, _4, _5, _6, _7, _8, _9, T, J, Q, K, A}
+export enum CardRank {_2, _3, _4, _5, _6, _7, _8, _9, T, J, Q, K, A, O, R, E}
 export enum CardSuit { CLUBS, DIAMONDS, HEARTS, SPADES}
 
 export default class Card {
