@@ -177,7 +177,7 @@ export default class Dealer {
         this.collectAnte()
         const firstAction = this.nextOrWrap(this.postBlinds())
         this.dealHoleCards()
-        if (this._players.filter(player => player !== null && player.stack() !== 0).length > 1) {
+        if (this._players.filter(player => player !== null && player.stack() !== 0).length > 0) {
             this._bettingRound = new BettingRound([...this._players], firstAction, this._forcedBets.blinds.big, this._forcedBets.blinds.big)
         }
         this._handInProgress = true
